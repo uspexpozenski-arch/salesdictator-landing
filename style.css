@@ -716,6 +716,7 @@ a { color: inherit; text-decoration: none; }
 .contact-card__icon--wa  { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
 .contact-card__icon--yt  { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
 .contact-card__icon--em  { background: rgba(99, 102, 241, 0.12); color: #818cf8; }
+.contact-card__icon--max { background: rgba(139, 92, 246, 0.12); color: #a78bfa; }
 
 .contact-card__label {
   font-size: 0.72rem;
