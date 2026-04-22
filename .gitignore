@@ -1,0 +1,4 @@
+.playwright-mcp/
+.claude/
+*.png
+patch_compose.py
