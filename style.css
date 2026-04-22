@@ -744,6 +744,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.03em;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .btn--hacker::before {
@@ -754,7 +755,7 @@ a { color: inherit; text-decoration: none; }
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
-  z-index: 0;
+  z-index: -1;
 }
 
 .btn--hacker:hover::before {
@@ -764,11 +765,6 @@ a { color: inherit; text-decoration: none; }
 .btn--hacker:hover {
   color: #fff;
   box-shadow: 0 0 32px var(--blue-glow);
-}
-
-.btn--hacker > * {
-  position: relative;
-  z-index: 1;
 }
 
 .btn__prefix {
@@ -823,8 +819,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 600px) {
+  .container { padding: 0 16px; }
   .hero__tag, .hero__title, .hero__sub { text-align: center; }
-  .hero__cta { justify-content: center; }
+  .hero__cta { justify-content: center; flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
   .hero__stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -833,4 +831,8 @@ a { color: inherit; text-decoration: none; }
   }
   .cards { grid-template-columns: 1fr; }
   .case { flex-direction: column; gap: 16px; }
+  .contact-card { padding: 14px 16px; gap: 12px; }
+  .contact-card__text { min-width: 0; overflow: hidden; }
+  .contact-card__val { font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .contacts__cta .btn--hacker { font-size: 0.8rem; padding: 12px 20px; word-break: break-all; white-space: normal; text-align: center; }
 }
